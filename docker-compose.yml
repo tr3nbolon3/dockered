@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile.production
     image: haliont/javascript-fastify-blog
-    command: ['npm', 'test']
+    command: bash -c "sleep 3 && npm test"
     depends_on:
       - db
 

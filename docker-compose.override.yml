@@ -3,7 +3,7 @@ version: '3.8'
 services:
   app:
     build: .
-    command: ['npm', 'run', 'dev']
+    command: bash -c "sleep 3 && npm run start"
     volumes:
       - ./app:/app
     ports:

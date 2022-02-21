@@ -15,7 +15,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
         name: Build docker compose image
-        run: make dc-build
+        run: make dc-build-production
       -
         name: Push docker compose image to Docker Hub
-        run: make dc-push
+        run: make dc-push-production

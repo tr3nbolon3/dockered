@@ -2,8 +2,9 @@ name: push
 
 on: push
 jobs:
-  build:
+  deployment:
     runs-on: ubuntu-latest
+    environment: production
     steps:
       - uses: actions/checkout@v2
       - run: make dc-test

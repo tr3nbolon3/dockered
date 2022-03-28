@@ -6,11 +6,19 @@ services:
       context: .
       dockerfile: Dockerfile.production
     image: haliont/javascript-fastify-blog
-    command: bash -c "sleep 3 && npm test"
+    command: ["npm", "test"]
     depends_on:
       - db
 
   db:
     image: postgres:latest
     environment:
-      - POSTGRES_PASSWORD=password
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 20s
+      timeout: 10s
+      retries: 5
+      start_period: 10s

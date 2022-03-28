@@ -9,12 +9,7 @@ jobs:
       -
         name: Create .env file
         run: |
-          touch ./app/.env
-          echo DATABASE_HOST=${{ secrets.DATABASE_HOST }} >> ./app/.env
-          echo DATABASE_NAME=${{ secrets.DATABASE_NAME }} >> ./app/.env
-          echo DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }} >> ./app/.env
-          echo DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME }} >> ./app/.env
-          cat ./app/.env
+          cp ./app/.env.example ./app/.env
       - run: make dc-test
       -
         name: Login to Docker Hub

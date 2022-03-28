@@ -1,7 +1,7 @@
 dc-up:
 	docker-compose up --abort-on-container-exit
 
-dc-test:
+dc-ci:
 	docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
 
 dc-build-production:

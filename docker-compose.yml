@@ -7,6 +7,8 @@ services:
       dockerfile: Dockerfile.production
     image: haliont/javascript-fastify-blog
     command: ["npm", "test"]
+    env_file:
+      - ./app/.env
     depends_on:
       - db
 

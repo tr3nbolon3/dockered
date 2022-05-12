@@ -1,8 +1,12 @@
+create-env:
+	cp ./app/.env.example ./app/.env
+
 dc-up:
+	make create-env
 	docker-compose up --abort-on-container-exit
 
 ci:
-	cp ./app/.env.example ./app/.env
+	make create-env
 	docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
 
 dc-build-production:

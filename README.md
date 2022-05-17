@@ -9,7 +9,7 @@ Docker with Docker Engine release 19.03.0+
 
 ### Commands
 - `make dc-up` - start the app using docker compose
-- `make dc-ci` - run tests for the app using docker compose
+- `make ci` - run tests for the app using docker compose
 
 ### Links:
 [Docker Hub Image](https://hub.docker.com/repository/docker/haliont/javascript-fastify-blog)

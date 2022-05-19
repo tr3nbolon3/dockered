@@ -1,5 +1,5 @@
 create-env:
-	cp ./app/.env.example ./app/.env
+	cp .env.example .env
 
 dc-up:
 	make create-env

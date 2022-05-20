@@ -10,7 +10,7 @@ services:
       - 8080:8080
 
   caddy:
-    image: caddy:latest
+    image: caddy:2.4.6
     ports:
       - 80:80
       - 443:443
